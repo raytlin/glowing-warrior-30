@@ -22,12 +22,28 @@
 | <%= link_to("Home", :controller => 'public', :action => 'list' )%> |
 </p>
 
+
+
+      
 <h1 style="text-align:center">The wholesale fashion jewelry supplier review super site! </h1><br />
 <p style="text-align:center" > | <%= link_to("All Reviews", :controller => 'public', :action => "list" )%> | <%= link_to("All Businesses", :controller => "public", :action => "allmerchants")%> |
 
 <p style="color: green"><%= flash[:notice] %></p>
 
 <%= yield  %>
+
+<div id="cse" style="width: 100%;">Loading</div>
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+  google.load('search', '1', {language : 'en'});
+  google.setOnLoadCallback(function() {
+    var customSearchControl = new google.search.CustomSearchControl('009598067262539149570:3wsvghcmtva');
+    customSearchControl.setResultSetSize(google.search.Search.SMALL_RESULTSET);
+    customSearchControl.draw('cse');
+  }, true);
+</script>
+<link rel="stylesheet" href="http://www.google.com/cse/style/look/minimalist.css" type="text/css" />
+
 
 </body>
 </html>
