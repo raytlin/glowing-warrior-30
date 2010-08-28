@@ -84,6 +84,7 @@ class PublicController < ApplicationController
 
   def send_merchant
   	@merchant = Merchant.new(params[:merchant])
+  	@merchant.image_path = "http://localthaifood.moxyfy.com/images/default_avatar.gif"
 	if @merchant.save 
   		flash[:notice] = "congratulations! you made a new merchant I think!"
   		redirect_to(:action => 'list')
