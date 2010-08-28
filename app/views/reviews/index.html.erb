@@ -1,0 +1,26 @@
+<h1>Listing reviews</h1>
+
+<table style="width: 1000px; border-collapse: collapse;">
+  <tr>
+    <th>Comment</th>
+    <th>Score</th>
+    <th>User</th>
+    <th>Merchant</th>
+  </tr>
+
+<% for review in @reviews %>
+  <tr>
+    <td><%=h review.comment %></td>
+    <td><%=h review.score %></td>
+    <td><%=h review.user.email if review.user %></td>
+    <td><%=h review.merchant.name if review.merchant %></td>
+    <td><%= link_to 'Show', review %></td>
+    <td><%= link_to 'Edit', edit_review_path(review) %></td>
+    <td><%= link_to 'Destroy', review, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New review', new_review_path %> | <%= link_to('Back to Menu', :controller => "admin", :action => "menu" ) %>

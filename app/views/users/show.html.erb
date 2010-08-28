@@ -1,0 +1,33 @@
+<p>
+  <b>Email:</b>
+  <%=h @user.email %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%=h @user.password %>
+</p>
+
+<p>
+  <b>First Name:</b>
+  <%=h @user.first_name %>
+</p>
+
+<p>
+  <b>Last Name:</b>
+  <%=h @user.last_name %>
+</p>
+<p>
+	<b>Profile Pic</b><br />
+	<%= image_tag(@user.image_path, :size => '90x100' )%>
+</p>
+<p>
+	<b>Reviews</b><br />		
+	<% for review in @user.reviews -%>
+		<p><%= link_to( review.merchant.name, :controller => 'reviews', :action => 'show', :id => review.id ) -%>, Score: <%= review.score %> <br />
+		<%=  review.comment %> <br /></p>
+	<% end -%>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

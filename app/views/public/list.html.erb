@@ -1,0 +1,38 @@
+
+
+<center>
+	<p> all the reviews are listed right here: </p>
+<table style="width: 500px; border-collapse: collapse;">
+	<% for review in @reviews -%>
+	<% row_color = cycle("CCCCCC", "FFFFFF") %>
+	<tr style="background: #<%= row_color %>;" >
+		
+		<td><b><%= link_to(review.user.first_name.capitalize + " " + truncate(review.user.last_name.capitalize, 2, "."), :controller => "users", :action => "public", :id => review.user.id) %></b><br /> <%= image_tag(review.user.image_path, :size => '90x100')%> </td>
+			
+		<td>
+			 <p style="font-size: 1em; font-weight: bold;"> Review of <%= link_to(review.merchant.name, :controller => "merchants", :action => "public", :id => review.merchant.id) %> 
+			 </p>
+		
+			 <blockquote >	<%= review.comment %> </blockquote>
+			<p style="font-size: 1em; font-weight: bold; text-align:left;"> 
+				<% if review.score <= 2 then -%>
+					<font color="yellow">
+				<% elsif (review.score == 3) || (review.score == 4) -%>
+					<font color="orange">
+				<% else -%>
+					<font color="red">
+				<% end -%>
+				Rating: <%= review.score%> out of 5 
+					</font>			
+			</p>
+			<p style="font-size: .8em; text-align:right" ><i> Written on <%= review.created_at.strftime("%a %b %d %Y") %>  </i></p>
+			
+		</td>
+	</tr>
+	<% end -%>
+</table>
+
+<% session[:merchant_id] = 0%>
+
+</table>
+</center>

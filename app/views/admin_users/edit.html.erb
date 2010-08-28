@@ -1,0 +1,22 @@
+<h1>Editing admin_user</h1>
+
+<%= error_messages_for :admin_user %>
+
+<% form_for(@admin_user) do |f| %>
+  <p>
+    <b>Name</b><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <b>Password</b><br />
+    <%= f.text_field :password %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @admin_user %> |
+<%= link_to 'Back', admin_users_path %>

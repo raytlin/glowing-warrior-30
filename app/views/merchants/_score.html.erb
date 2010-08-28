@@ -1,0 +1,13 @@
+<% i = 0.0 %> 
+<% score = 0.0 %>
+
+	<% for review in merchant.reviews -%>
+		<% score = score + review.score -%>
+		<% i = i + 1 -%>
+	<% end -%>
+	
+<% if score >= 1 then -%>
+	<%= (((score/i*10).to_i).to_f)/10 %>	
+<% else -%>
+	<%= 'N/A' %>
+<% end -%>

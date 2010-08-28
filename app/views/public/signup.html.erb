@@ -1,0 +1,38 @@
+<h1>Sign up! You won't regret it! </h1> <br />
+<%= error_messages_for :user %>
+
+
+	
+<% form_for :user, @user, :url => { :action => "send_signup" } do |f| %>
+  <p>
+	<b>Image Path</b><br /> 
+	<%= f.text_field :image_path %>*don't mess with this field. im warning you.<br />
+	<b>Image Preview</b><br /> 
+	<%= image_tag(@user.image_path, :size => '90x100' )%><br />
+	*this is the random image you will be assigned. if you dont like it you can refresh the page to get another one but that's about all you can do<br />
+</p>
+		
+<p>
+    <b>email *no spam I promise!</b><br />
+    <%= f.text_field :email %>
+  </p>
+   <p>
+    <b>First name</b><br />
+    <%= f.text_field :first_name %>
+  </p>
+  
+   <p>
+    <b>Last name</b><br />
+    <%= f.text_field :last_name %>
+  </p>
+
+  <p>
+    <b>Choose Password</b><br />
+    <%= f.text_field :password %><br />
+    *I didn't make one of those password blur out things. just make sure no one's looking over your shoulder.
+  </p>
+  
+  <p>
+    <%= f.submit "Submit" %>
+  </p>
+<% end %>

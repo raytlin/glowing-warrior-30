@@ -1,0 +1,24 @@
+<p>
+  <b>Comment:</b>
+  <%=h @review.comment %>
+</p>
+
+<p>
+  <b>Score:</b>
+  <%=h @review.score %>
+</p>
+
+<p>
+  <b>User:</b>
+  
+  <%= link_to( @review.user.email, :controller => 'users', :action => 'show', :id => @review.user.id ) -%>
+</p>
+
+<p>
+  <b>Merchant:</b>
+  <%= link_to( @review.merchant.name, :controller => 'merchants', :action => 'show', :id => @review.merchant.id ) -%>
+</p>
+
+
+<%= link_to 'Edit', edit_review_path(@review) %> |
+<%= link_to 'Back', reviews_path %>

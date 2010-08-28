@@ -1,0 +1,26 @@
+
+<p style="text-align:center" ><b>List of All Merchants on the website in alphabetical order!: </b><br /> 
+	*the one you're looking for not here? <%= link_to("submit a new business", :action => "newmerchant")%>
+</p>
+<% for merchant in @merchants %>
+	<div id="border">
+		<h1 style="text-align:center">
+			<p><%= link_to(merchant.name, :controller => "merchants", :action => "public", :id => merchant.id) -%> </p>
+			<p>Overall rating: 
+			<b style="color:red; font-size:1.5em">
+			<% i = 0.0 %> 
+			<% score = 0.0 %>
+				<% for review in merchant.reviews -%>
+					<% score = score + review.score -%>
+					<% i = i + 1 -%>
+				<% end -%>
+			<% if score >= 1 then -%>
+				<%= (((score/i*10).to_i).to_f)/10 %>	
+			<% else -%>
+				<%= 'N/A' %>
+			<% end -%>
+		</b> /5
+		</p>
+		</h1>
+	</div><br/ >
+<% end -%>	

@@ -1,0 +1,34 @@
+<h1 style="text-align:left"> <%= @user.first_name.capitalize %> <%= truncate(@user.last_name.capitalize, 2, ".")  %></h1>
+
+<p><%= image_tag(@user.image_path, :size => '90x100')%></p><br />
+<p> <%= @user.first_name.capitalize %>'s Reviews: </p>
+<table style="width: 500px; border-collapse: collapse;">
+	<% for review in @user.reviews -%>
+	<% row_color = cycle("CCCCCC", "FFFFFF") %>
+	<tr style="background: #<%= row_color %>;" >
+		
+		
+		<td>
+			 <p style="font-size: 1em; font-weight: bold;"> Review of <%= link_to(review.merchant.name, :controller => "merchants", :action => "public", :id => review.merchant.id) %> 
+			 </p>
+		
+			 <blockquote >	<%= review.comment %> </blockquote>
+			<p style="font-size: 1em; font-weight: bold; text-align:left;"> 
+				<% if review.score <= 2 then -%>
+					<font color="yellow">
+				<% elsif (review.score == 3) || (review.score == 4) -%>
+					<font color="orange">
+				<% else -%>
+					<font color="red">
+				<% end -%>
+				Rating: <%= review.score%> out of 5 
+					</font>			
+			</p>
+			<p style="font-size: .8em; text-align:right" ><i> Written on <%= review.created_at.strftime("%a %b %d %Y") %>  </i></p>
+			
+		</td>
+	</tr>
+	<% end -%>
+</table>
+
+<%= link_to('|Main Menu|', :controller => 'public', :action => 'list' )%>

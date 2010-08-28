@@ -1,0 +1,47 @@
+<p>
+  <b>Name:</b>
+  <%=h @merchant.name %>
+</p>
+<p>
+	<%= image_tag(@merchant.image_path, :size => '200x90' )%>
+</p>
+<p>
+  <b>Address:</b>
+  <%=h @merchant.address %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @merchant.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%=h @merchant.state %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%=h @merchant.zip %>
+</p>
+
+<p>
+  <b>Web address:</b>
+  <%=h @merchant.web_address %>
+</p>
+
+<p>
+  <b>Score:</b>
+  <%=h render :partial => 'score', :locals => { :merchant => @merchant } %>
+</p>
+
+<p>
+	<b>Reviews</b><br />		
+	<% for review in @merchant.reviews -%>
+		<p>User: <%= link_to( review.user.email, :controller => 'reviews', :action => 'show', :id => review.id ) -%>, Score: <%= review.score %> <br />
+		<%=  review.comment %> <br /></p>
+	<% end -%>
+</p>
+
+<%= link_to 'Edit', edit_merchant_path(@merchant) %> |
+<%= link_to 'Back', merchants_path %>

@@ -1,0 +1,799 @@
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: Can't create table '.\review_site_development\schema_migrations.frm' (errno: 121): CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: Can't create table '.\review_site_development\schema_migrations.frm' (errno: 121): CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: Can't create table '.\review_site_development\schema_migrations.frm' (errno: 121): CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100828035345)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Table 'users' already exists: CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255), `password` varchar(255), `first_name` varchar(255), `last_name` varchar(255), `image_path` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.3ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (46.9ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100828035345)
+  [4;36;1mSQL (93.8ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255), `password` varchar(255), `first_name` varchar(255), `last_name` varchar(255), `image_path` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (31.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100828035345')[0m
+Migrating to CreateAdminUsers (20100828035502)
+  [4;36;1mSQL (15.6ms)[0m   [0;1mCREATE TABLE `admin_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100828035502')[0m
+Migrating to CreateMerchants (20100828035613)
+  [4;36;1mSQL (15.6ms)[0m   [0;1mCREATE TABLE `merchants` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `address` varchar(255), `city` varchar(255), `state` varchar(255), `zip` int(11), `web_address` varchar(255), `image_path` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100828035613')[0m
+Migrating to CreateReviews (20100828035717)
+  [4;36;1mSQL (15.6ms)[0m   [0;1mCREATE TABLE `reviews` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `comment` text, `score` int(11), `user_id` int(11), `merchant_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100828035717')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW FIELDS FROM `admin_users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `admin_users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `admin_users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mdescribe `merchants`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `merchants`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mdescribe `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `reviews`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-08-27 21:47:55) [GET]
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY created_at DESC[0m
+Rendering template within layouts/public
+Rendering public/list
+ERROR: compiling _run_erb_app47views47public47_all_reviews46html46erb_locals_@reviews_all_reviews_object RAISED compile error
+F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/public/_all_reviews.html.erb: formal argument cannot be an instance variable
+...ls_@reviews_all_reviews_object(local_assigns)
+                              ^
+F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/public/_all_reviews.html.erb: syntax error, unexpected '(', expecting '\n' or ';'
+...s_@reviews_all_reviews_object(local_assigns)
+                              ^
+Function body:           def _run_erb_app47views47public47_all_reviews46html46erb_locals_@reviews_all_reviews_object(local_assigns)
+            old_output_buffer = output_buffer;all_reviews = local_assigns[:all_reviews];@reviews = local_assigns[:@reviews];object = local_assigns[:object];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<table style=\"width: 500px; border-collapse: collapse;\">\n\t"
+;  for review in @reviews 
+@output_buffer.concat "\t";  row_color = cycle("CCCCCC", "FFFFFF") ; @output_buffer.concat "\n\t<tr style=\"background: #"
+; @output_buffer.concat(( row_color ).to_s); @output_buffer.concat ";\" >\n\t\t\n\t\t<td><b>"
+
+; @output_buffer.concat(( link_to(review.user.first_name.capitalize + " " + truncate(review.user.last_name.capitalize, 2, "."), :controller => "users", :action => "public", :id => review.user.id) ).to_s); @output_buffer.concat "</b><br /> "; @output_buffer.concat(( image_tag(review.user.image_path, :size => '90x100')).to_s); @output_buffer.concat " </td>\n\t\t\t\n\t\t<td>\n\t\t\t <p style=\"font-size: 1em; font-weight: bold;\"> Review of "
+
+
+; @output_buffer.concat(( link_to(review.merchant.name, :controller => "merchants", :action => "public", :id => review.merchant.id) ).to_s); @output_buffer.concat " \n\t\t\t </p>\n\t\t\n\t\t\t <blockquote >\t"
+
+
+; @output_buffer.concat(( review.comment ).to_s); @output_buffer.concat " </blockquote>\n\t\t\t<p style=\"font-size: 1em; font-weight: bold; text-align:left;\"> \n\t\t\t\t"
+
+;  if review.score <= 2 then 
+@output_buffer.concat "\t\t\t\t\t<font color=\"yellow\">\n\t\t\t\t"
+;  elsif (review.score == 3) || (review.score == 4) 
+@output_buffer.concat "\t\t\t\t\t<font color=\"orange\">\n\t\t\t\t"
+;  else 
+@output_buffer.concat "\t\t\t\t\t<font color=\"red\">\n\t\t\t\t"
+;  end 
+@output_buffer.concat "\t\t\t\tRating: "; @output_buffer.concat(( review.score).to_s); @output_buffer.concat " out of 5 \n\t\t\t\t\t</font>\t\t\t\n\t\t\t</p>\n\t\t\t<p style=\"font-size: .8em; text-align:right\" ><i> Written on "
+
+
+; @output_buffer.concat(( review.created_at.strftime("%a %b %d %Y") ).to_s); @output_buffer.concat "  </i></p>\n\t\t\t\n\t\t</td>\n\t</tr>\n\t"
+
+
+
+;  end 
+@output_buffer.concat "</table>"; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/public/_all_reviews.html.erb:0:in `compile!'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:61:in `compile'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:28:in `render'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable_partial.rb:20:in `render'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:26:in `benchmark'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:26:in `benchmark'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable_partial.rb:19:in `render'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/template.rb:205:in `render_template'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable_partial.rb:44:in `render_partial'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/partials.rb:184:in `render_partial'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:267:in `render'
+F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/public/list.html.erb:5:in `_run_erb_app47views47public47list46html46erb'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:34:in `send'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:34:in `render'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:306:in `with_template'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:30:in `render'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/template.rb:205:in `render_template'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:265:in `render'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:348:in `_render_with_layout'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:262:in `render'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1250:in `render_for_file'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:936:in `render_without_benchmark'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1326:in `default_render'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:391:in `process'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:386:in `call'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/routing/route_set.rb:438:in `call'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:87:in `dispatch'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:121:in `_call'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:130
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/chunked.rb:15:in `call'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:67:in `process'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:159:in `process_client'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:158:in `each'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:158:in `process_client'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `run'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `initialize'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `new'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `run'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:268:in `initialize'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:268:in `new'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:268:in `run'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:38:in `run'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rails-2.3.8/lib/commands/server.rb:111
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+F:/Program Files/BitNami RubyStack/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/public/_all_reviews.html.erb: formal argument cannot be an instance variable
+...ls_@reviews_all_reviews_object(local_assigns)
+                              ^
+F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/public/_all_reviews.html.erb: syntax error, unexpected '(', expecting '\n' or ';'
+...s_@reviews_all_reviews_object(local_assigns)
+                              ^) on line #0 of app/views/public/_all_reviews.html.erb:
+1: <table style="width: 500px; border-collapse: collapse;">
+2: 	<% for review in @reviews -%>
+3: 	<% row_color = cycle("CCCCCC", "FFFFFF") %>
+
+    app/views/public/_all_reviews.html.erb:0:in `compile!'
+    app/views/public/list.html.erb:5
+
+Rendered rescues/_trace (59.6ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AdminController#menu (for 127.0.0.1 at 2010-08-27 21:48:48) [GET]
+Redirected to http://localhost:3000/admin
+Filter chain halted as [:authorize_access] rendered_or_redirected.
+Completed in 7309ms (DB: 0) | 302 Found [http://localhost/admin/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-08-27 21:48:56) [GET]
+  [4;35;1mAdminUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `admin_users`[0m
+Rendering template within layouts/admin
+Rendering admin/index
+Completed in 28ms (View: 17, DB: 4) | 200 OK [http://localhost/admin]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-27 21:48:57) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-08-27 21:50:31) [GET]
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY created_at DESC[0m
+Rendering template within layouts/public
+Rendering public/list
+Completed in 77ms (View: 69, DB: 1) | 200 OK [http://localhost/public/list]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-27 21:50:32) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/public.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-08-27 21:52:11) [GET]
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY created_at DESC[0m
+Rendering template within layouts/public
+Rendering public/list
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://localhost/public/list]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-08-27 21:57:01) [GET]
+  [4;36;1mAdminUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `admin_users`[0m
+Rendering template within layouts/admin
+Rendering admin/index
+Completed in 19ms (View: 5, DB: 5) | 200 OK [http://localhost/admin]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AdminController#send_login (for 127.0.0.1 at 2010-08-27 21:57:07) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"HGpikd+yN8EwCXZMyz2fygKv3jUFaNxkciWzf+9dKkI=", "admin_user"=>{"name"=>"ray", "password"=>"lin"}}
+  [4;35;1mAdminUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `admin_users`[0m
+  [4;36;1mAdminUser Load (1.0ms)[0m   [0;1mSELECT * FROM `admin_users` WHERE (name = 'ray' AND password = 'lin') LIMIT 1[0m
+Redirected to http://localhost:3000/admin/menu
+Completed in 18ms (DB: 5) | 302 Found [http://localhost/admin/send_login]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AdminController#menu (for 127.0.0.1 at 2010-08-27 21:57:08) [GET]
+Rendering template within layouts/admin
+Rendering admin/menu
+Completed in 10ms (View: 8, DB: 1) | 200 OK [http://localhost/admin/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AdminController#logout (for 127.0.0.1 at 2010-08-27 21:57:12) [GET]
+Redirected to http://localhost:3000/admin
+Completed in 3ms (DB: 0) | 302 Found [http://localhost/admin/logout]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-08-27 21:57:13) [GET]
+  [4;35;1mAdminUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `admin_users`[0m
+Rendering template within layouts/admin
+Rendering admin/index
+Completed in 16ms (View: 5, DB: 4) | 200 OK [http://localhost/admin]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-08-27 21:57:17) [GET]
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY created_at DESC[0m
+Rendering template within layouts/public
+Rendering public/list
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#signup (for 127.0.0.1 at 2010-08-27 21:57:31) [GET]
+  [4;35;1mUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/public
+Rendering public/signup
+Completed in 56ms (View: 12, DB: 5) | 200 OK [http://localhost/public/signup]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#send_signup (for 127.0.0.1 at 2010-08-27 21:58:10) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"HGpikd+yN8EwCXZMyz2fygKv3jUFaNxkciWzf+9dKkI=", "user"=>{"last_name"=>"Lin", "password"=>"lin", "image_path"=>"http://www.eng.uc.edu/dept_cme/facultystaff/faculty/images/raylin.jpg", "first_name"=>"Ray", "email"=>"raytlin@gmail.com"}}
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'raytlin@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Create (1.0ms)[0m   [0mINSERT INTO `users` (`created_at`, `updated_at`, `last_name`, `password`, `image_path`, `email`, `first_name`) VALUES('2010-08-28 04:58:10', '2010-08-28 04:58:10', 'Lin', 'lin', 'http://www.eng.uc.edu/dept_cme/facultystaff/faculty/images/raylin.jpg', 'raytlin@gmail.com', 'Ray')[0m
+  [4;36;1mSQL (29.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 48ms (DB: 35) | 302 Found [http://localhost/public/send_signup]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-08-27 21:58:10) [GET]
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY created_at DESC[0m
+Rendering template within layouts/public
+Rendering public/list
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#allmerchants (for 127.0.0.1 at 2010-08-27 21:58:15) [GET]
+  [4;36;1mMerchant Load (1.0ms)[0m   [0;1mSELECT * FROM `merchants` ORDER BY name ASC[0m
+Rendering template within layouts/public
+Rendering public/allmerchants
+Completed in 18ms (View: 11, DB: 1) | 200 OK [http://localhost/public/allmerchants]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#newmerchant (for 127.0.0.1 at 2010-08-27 21:58:17) [GET]
+Redirected to http://localhost:3000/public/login
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/public/newmerchant]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#login (for 127.0.0.1 at 2010-08-27 21:58:18) [GET]
+  [4;35;1mUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/public
+Rendering public/login
+Completed in 22ms (View: 12, DB: 4) | 200 OK [http://localhost/public/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#send_login (for 127.0.0.1 at 2010-08-27 21:58:24) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"HGpikd+yN8EwCXZMyz2fygKv3jUFaNxkciWzf+9dKkI=", "user"=>{"password"=>"lin", "email"=>"raytlin@gmail.com"}}
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (email = 'raytlin@gmail.com' AND password = 'lin') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 15ms (DB: 4) | 302 Found [http://localhost/public/send_login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-08-27 21:58:25) [GET]
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY created_at DESC[0m
+Rendering template within layouts/public
+Rendering public/list
+Completed in 13ms (View: 5, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#allmerchants (for 127.0.0.1 at 2010-08-27 21:58:28) [GET]
+  [4;35;1mMerchant Load (1.0ms)[0m   [0mSELECT * FROM `merchants` ORDER BY name ASC[0m
+Rendering template within layouts/public
+Rendering public/allmerchants
+Completed in 12ms (View: 3, DB: 2) | 200 OK [http://localhost/public/allmerchants]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#newmerchant (for 127.0.0.1 at 2010-08-27 21:58:30) [GET]
+  [4;36;1mMerchant Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+Rendering template within layouts/public
+Rendering public/newmerchant
+Completed in 80ms (View: 66, DB: 4) | 200 OK [http://localhost/public/newmerchant]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#send_merchant (for 127.0.0.1 at 2010-08-27 21:58:50) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"HGpikd+yN8EwCXZMyz2fygKv3jUFaNxkciWzf+9dKkI=", "merchant"=>{"city"=>"Garden Grove", "address"=>"10152 Chapman Ave", "name"=>"Alamode", "zip"=>"92840", "web_address"=>"alamodeonline.com", "state"=>"CA"}}
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMerchant Load (0.0ms)[0m   [0mSELECT `merchants`.id FROM `merchants` WHERE (`merchants`.`name` = BINARY 'Alamode') LIMIT 1[0m
+  [4;36;1mMerchant Load (0.0ms)[0m   [0;1mSELECT `merchants`.id FROM `merchants` WHERE (`merchants`.`web_address` = BINARY 'alamodeonline.com') LIMIT 1[0m
+  [4;35;1mMerchant Create (1.0ms)[0m   [0mINSERT INTO `merchants` (`name`, `address`, `city`, `zip`, `created_at`, `updated_at`, `web_address`, `image_path`, `state`) VALUES('Alamode', '10152 Chapman Ave', 'Garden Grove', 92840, '2010-08-28 04:58:50', '2010-08-28 04:58:50', 'alamodeonline.com', NULL, 'CA')[0m
+  [4;36;1mSQL (33.2ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 52ms (DB: 38) | 302 Found [http://localhost/public/send_merchant]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-08-27 21:58:50) [GET]
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY created_at DESC[0m
+Rendering template within layouts/public
+Rendering public/list
+Completed in 15ms (View: 4, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-08-27 21:58:55) [GET]
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY created_at DESC[0m
+Rendering template within layouts/public
+Rendering public/list
+Completed in 11ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#allmerchants (for 127.0.0.1 at 2010-08-27 21:58:57) [GET]
+  [4;35;1mMerchant Load (0.0ms)[0m   [0mSELECT * FROM `merchants` ORDER BY name ASC[0m
+Rendering template within layouts/public
+Rendering public/allmerchants
+  [4;36;1mMerchant Columns (4.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+Completed in 25ms (View: 13, DB: 5) | 200 OK [http://localhost/public/allmerchants]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#allmerchants (for 127.0.0.1 at 2010-08-27 21:58:58) [GET]
+  [4;36;1mMerchant Load (0.0ms)[0m   [0;1mSELECT * FROM `merchants` ORDER BY name ASC[0m
+Rendering template within layouts/public
+Rendering public/allmerchants
+  [4;35;1mMerchant Columns (7.8ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+Completed in 29ms (View: 12, DB: 11) | 200 OK [http://localhost/public/allmerchants]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-27 21:59:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMerchant Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+
+ActionView::TemplateError (can't convert nil into String) on line #3 of app/views/merchants/public.html.erb:
+1: <h1 style="text-align:left"> <%= @merchant.name %> </h1>
+2: 
+3: <%= image_tag(@merchant.image_path, :size => '200x90')%>
+4: 
+5: <h2 style="color:red; text-align:left"> Overall Rating: <%=h render :partial => 'score', :locals => { :merchant => @merchant } %>/5 </h2>
+6: 
+
+    app/views/merchants/public.html.erb:3
+    app/controllers/merchants_controller.rb:103:in `public'
+
+Rendered rescues/_trace (113.3ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-08-27 22:02:11) [GET]
+  [4;35;1mAdminUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `admin_users`[0m
+Rendering template within layouts/admin
+Rendering admin/index
+Completed in 16ms (View: 5, DB: 5) | 200 OK [http://localhost/admin]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AdminController#send_login (for 127.0.0.1 at 2010-08-27 22:02:15) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"HGpikd+yN8EwCXZMyz2fygKv3jUFaNxkciWzf+9dKkI=", "admin_user"=>{"name"=>"ray", "password"=>"lin"}}
+  [4;36;1mAdminUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `admin_users`[0m
+  [4;35;1mAdminUser Load (1.0ms)[0m   [0mSELECT * FROM `admin_users` WHERE (name = 'ray' AND password = 'lin') LIMIT 1[0m
+Redirected to http://localhost:3000/admin/menu
+Completed in 15ms (DB: 5) | 302 Found [http://localhost/admin/send_login]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AdminController#menu (for 127.0.0.1 at 2010-08-27 22:02:16) [GET]
+Rendering template within layouts/admin
+Rendering admin/menu
+Completed in 5ms (View: 3, DB: 1) | 200 OK [http://localhost/admin/menu]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-08-27 22:02:19) [GET]
+  [4;36;1mAdminUser Columns (4.9ms)[0m   [0;1mSHOW FIELDS FROM `admin_users`[0m
+Redirected to http://localhost:3000/admin/menu
+Completed in 12ms (DB: 5) | 302 Found [http://localhost/admin]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AdminController#menu (for 127.0.0.1 at 2010-08-27 22:02:20) [GET]
+Rendering template within layouts/admin
+Rendering admin/menu
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/admin/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#index (for 127.0.0.1 at 2010-08-27 22:02:24) [GET]
+  [4;35;1mMerchant Load (1.0ms)[0m   [0mSELECT * FROM `merchants` [0m
+Rendering template within layouts/admin
+Rendering merchants/index
+  [4;36;1mMerchant Columns (4.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+Rendered merchants/_score (9.8ms)
+Completed in 41ms (View: 27, DB: 7) | 200 OK [http://localhost/merchants/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-27 22:02:25) [GET]
+  Parameters: {"1282971125"=>nil}
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#edit (for 127.0.0.1 at 2010-08-27 22:02:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMerchant Columns (4.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.9ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/admin
+Rendering merchants/edit
+Completed in 28ms (View: 14, DB: 10) | 200 OK [http://localhost/merchants/1/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#update (for 127.0.0.1 at 2010-08-27 22:02:52) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"HGpikd+yN8EwCXZMyz2fygKv3jUFaNxkciWzf+9dKkI=", "id"=>"1", "merchant"=>{"city"=>"Garden Grove", "address"=>"10152 Chapman Ave", "name"=>"Alamode", "zip"=>"92840", "image_path"=>"http://alamodeonline.com/Images/Logo.gif", "web_address"=>"alamodeonline.com", "state"=>"CA"}}
+  [4;36;1mMerchant Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.9ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMerchant Load (0.0ms)[0m   [0mSELECT `merchants`.id FROM `merchants` WHERE (`merchants`.`name` = BINARY 'Alamode' AND `merchants`.id <> 1) LIMIT 1[0m
+  [4;36;1mMerchant Load (0.0ms)[0m   [0;1mSELECT `merchants`.id FROM `merchants` WHERE (`merchants`.`web_address` = BINARY 'alamodeonline.com' AND `merchants`.id <> 1) LIMIT 1[0m
+  [4;35;1mMerchant Update (1.0ms)[0m   [0mUPDATE `merchants` SET `updated_at` = '2010-08-28 05:02:52', `image_path` = 'http://alamodeonline.com/Images/Logo.gif' WHERE `id` = 1[0m
+  [4;36;1mSQL (31.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/merchants/1
+Completed in 54ms (DB: 40) | 302 Found [http://localhost/merchants/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#show (for 127.0.0.1 at 2010-08-27 22:02:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMerchant Columns (5.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/admin
+Rendering merchants/show
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+Rendered merchants/_score (6.8ms)
+Completed in 35ms (View: 17, DB: 10) | 200 OK [http://localhost/merchants/1]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#index (for 127.0.0.1 at 2010-08-27 22:02:56) [GET]
+  [4;36;1mMerchant Load (1.0ms)[0m   [0;1mSELECT * FROM `merchants` [0m
+Rendering template within layouts/admin
+Rendering merchants/index
+  [4;35;1mMerchant Columns (7.8ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+Rendered merchants/_score (21.5ms)
+Completed in 47ms (View: 29, DB: 11) | 200 OK [http://localhost/merchants]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AdminController#menu (for 127.0.0.1 at 2010-08-27 22:02:58) [GET]
+Rendering template within layouts/admin
+Rendering admin/menu
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/admin/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-08-27 22:03:03) [GET]
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY created_at DESC[0m
+Rendering template within layouts/public
+Rendering public/list
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#allmerchants (for 127.0.0.1 at 2010-08-27 22:03:06) [GET]
+  [4;36;1mMerchant Load (0.0ms)[0m   [0;1mSELECT * FROM `merchants` ORDER BY name ASC[0m
+Rendering template within layouts/public
+Rendering public/allmerchants
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+Completed in 25ms (View: 13, DB: 5) | 200 OK [http://localhost/public/allmerchants]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-27 22:03:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.9ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+Rendered merchants/_score (6.8ms)
+Completed in 84ms (View: 67, DB: 7) | 200 OK [http://localhost/merchants/public/1]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#public (for 127.0.0.1 at 2010-08-27 22:03:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Columns (7.8ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mMerchant Columns (43.0ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;35;1mMerchant Load (0.0ms)[0m   [0mSELECT * FROM `merchants` [0m
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (4.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering reviews/public
+Completed in 103ms (View: 16, DB: 62) | 200 OK [http://localhost/reviews/public/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#create_public (for 127.0.0.1 at 2010-08-27 22:05:30) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"HGpikd+yN8EwCXZMyz2fygKv3jUFaNxkciWzf+9dKkI=", "review"=>{"comment"=>"This is the best ring place in town! They have great prices since they have a pretty decent bulk discount rate. The policy is kind of hidden in there but they'll give you the discount even if you don't ask for it. One warning though, special orders can take a few weeks but in stock items always ship quick!", "merchant_id"=>"1", "score"=>"5"}}
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` [0m
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (user_id = 1 AND merchant_id = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mReview Create (0.0ms)[0m   [0;1mINSERT INTO `reviews` (`comment`, `created_at`, `updated_at`, `user_id`, `score`, `merchant_id`) VALUES('This is the best ring place in town! They have great prices since they have a pretty decent bulk discount rate. The policy is kind of hidden in there but they\'ll give you the discount even if you don\'t ask for it. One warning though, special orders can take a few weeks but in stock items always ship quick!', '2010-08-28 05:05:30', '2010-08-28 05:05:30', 1, 5, 1)[0m
+  [4;35;1mSQL (17.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 37ms (DB: 23) | 302 Found [http://localhost/reviews/create_public]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-27 22:05:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMerchant Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (1.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;35;1mReview Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (12.7ms)
+  [4;36;1mUser Columns (4.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (4.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:24)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 64ms (View: 35, DB: 20) | 200 OK [http://localhost/merchants/public/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-08-27 22:05:38) [GET]
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY created_at DESC[0m
+Rendering template within layouts/public
+Rendering public/list
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47public47list46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/public/list.html.erb:10)
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 46ms (View: 23, DB: 17) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-08-27 22:05:41) [GET]
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY created_at DESC[0m
+Rendering template within layouts/public
+Rendering public/list
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47public47list46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/public/list.html.erb:10)
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 48ms (View: 24, DB: 17) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#allmerchants (for 127.0.0.1 at 2010-08-27 22:05:42) [GET]
+  [4;35;1mMerchant Load (1.0ms)[0m   [0mSELECT * FROM `merchants` ORDER BY name ASC[0m
+Rendering template within layouts/public
+Rendering public/allmerchants
+  [4;36;1mMerchant Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Completed in 86ms (View: 71, DB: 11) | 200 OK [http://localhost/public/allmerchants]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-08-27 22:05:46) [GET]
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY created_at DESC[0m
+Rendering template within layouts/public
+Rendering public/list
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47public47list46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/public/list.html.erb:10)
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 46ms (View: 22, DB: 16) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-27 22:05:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (1.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (12.7ms)
+  [4;35;1mUser Columns (6.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:24)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 51ms (View: 25, DB: 18) | 200 OK [http://localhost/merchants/public/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-08-27 22:05:55) [GET]
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY created_at DESC[0m
+Rendering template within layouts/public
+Rendering public/list
+  [4;35;1mReview Columns (6.8ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47public47list46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/public/list.html.erb:10)
+  [4;36;1mMerchant Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 49ms (View: 22, DB: 20) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-08-27 22:05:58) [GET]
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY created_at DESC[0m
+Rendering template within layouts/public
+Rendering public/list
+  [4;35;1mReview Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47public47list46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/public/list.html.erb:10)
+  [4;36;1mMerchant Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 49ms (View: 24, DB: 16) | 200 OK [http://localhost/]

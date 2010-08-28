@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>The wholesale fashion jewelry supplier review super site: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'public' %>
+ 
+</head>
+<body>
+
+<p style="text-align:right" >
+<% if session[:user_name] %>
+	hallo! <%= session[:user_name] %>
+<% end -%>	
+<% if session[:user_id] -%>	
+ | <%= link_to('log out', :controller => 'public', :action => 'logout' )%> |  
+<% else -%>
+ | <%= link_to('sign up!', :controller => 'public', :action => 'signup' )%> | <%= link_to('log in', :controller => 'public', :action => 'login' )%> | 
+<% end -%> 
+| <%= link_to("Home", :controller => 'public', :action => 'list' )%> |
+</p>
+
+<h1 style="text-align:center">The wholesale fashion jewelry supplier review super site! </h1><br />
+<p style="text-align:center" > | <%= link_to("All Reviews", :controller => 'public', :action => "list" )%> | <%= link_to("All Businesses", :controller => "public", :action => "allmerchants")%> |
+
+<p style="color: green"><%= flash[:notice] %></p>
+
+<%= yield  %>
+
+</body>
+</html>

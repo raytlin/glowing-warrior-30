@@ -1,0 +1,40 @@
+<h1>List a new business that we don't yet know about! </h1> <br />
+<%= error_messages_for :merchant %>
+
+
+	
+<% form_for :merchant, @merchant, :url => { :action => "send_merchant" } do |f| %>
+  
+  <p>
+    <b>Company Name</b><br />
+    <%= f.text_field :name %>
+  </p>
+	
+  <p>
+    <b>Web address</b><br />
+    http://www.<%= f.text_field :web_address %>
+  </p>
+  <p>
+    <b>Address</b><br />
+    <%= f.text_field :address %>
+  </p>
+
+  <p>
+    <b>City</b><br />
+    <%= f.text_field :city %>
+  </p>
+
+  <p>
+    <b>State</b><br />
+    <%= f.text_field :state %>
+  </p>
+
+  <p>
+    <b>Zip</b><br />
+    <%= f.text_field :zip %>
+  </p>
+
+  <p>
+    <%= f.submit "Submit" %>
+  </p>
+<% end -%>
