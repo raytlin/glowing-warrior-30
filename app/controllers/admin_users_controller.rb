@@ -2,7 +2,7 @@ class AdminUsersController < ApplicationController
   # GET /admin_users
   # GET /admin_users.xml
   
-  #before_filter :authorize_access, :except => [:public]
+  before_filter :authorize_access, :except => [:public]
   
   layout 'admin'
   
