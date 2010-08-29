@@ -1,7 +1,12 @@
 
 
 <center>
-	<p> all the reviews are listed right here: </p>
+	<p style="font-weight:bold" ><% unless session[:user_id]%>
+		Hey you! I'm gonna guess you dont have an account so <%= link_to("Sign Up!", :controller => "public", :action => "signup" )%><br /> This site's kinda like yelp but crappier. I mean you like yelp, right? <br /> So just <%= link_to("Sign Up!", :controller => "public", :action => "signup" )%> already.
+	<% end -%>
+</p><br />
+	
+	<p style="font-weight:bold; font-size:.8em;"> Want to review somethign not listed? <%= link_to("Create a New Thing to Review!", :controller => "public", :action => "newmerchant" )%>
 <table style="width: 500px; border-collapse: collapse;">
 	<% for review in @reviews -%>
 	<% row_color = cycle("CCCCCC", "FFFFFF") %>

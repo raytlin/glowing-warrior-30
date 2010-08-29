@@ -1,7 +1,7 @@
-<h1>User Login </h1>
+<h1>User Login </h1><br />
 <%= error_messages_for :user %>
 
-
+<p>Not a user yet? <%= link_to("Sign Up!", :controller => "public", :action => "signup" )%> </p>
 	
 <% form_for :user, @user, :url => { :action => "send_login" } do |f| %>
   <p>
@@ -18,3 +18,4 @@
     <%= f.submit "Submit" %>
   </p>
 <% end %>
+

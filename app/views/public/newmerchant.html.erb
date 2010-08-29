@@ -11,8 +11,9 @@
   </p>
 	
   <p>
-    <b>Web address</b><br />
-    http://www.<%= f.text_field :web_address %>
+    <b>Web address*</b><br />
+    http://www.<%= f.text_field :web_address %><br />
+    *don't include the "http://www." when you put it in the box
   </p>
   <p>
     <b>Address</b><br />
@@ -33,6 +34,13 @@
     <b>Zip</b><br />
     <%= f.text_field :zip %>
   </p>
+  
+  <p>
+  	<b>Image Path*</b><br />
+  	<%= f.text_field :image_path %><br />
+  	*If you have the image URL (starting with http://...) of an image on another website, <br / > 
+  	you can paste it in here 
+  	(ex. <%= link_to('http://images.barnesandnoble.com/presources/images/bn_logo.gif', 'http://images.barnesandnoble.com/presources/images/bn_logo.gif')%> ) <br /> or you can just leave it blank.
 
   <p>
     <%= f.submit "Submit" %>
