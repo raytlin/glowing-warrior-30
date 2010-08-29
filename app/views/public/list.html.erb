@@ -6,7 +6,7 @@
 	<% end -%>
 </p><br />
 	
-	<p style="font-weight:bold; font-size:.8em;"> Want to review somethign not listed? <%= link_to("Create a New Thing to Review!", :controller => "public", :action => "newmerchant" )%>
+	<p style="font-weight:bold; font-size:.8em;"> Want to review something not listed? <%= link_to("Create a New Thing to Review!", :controller => "public", :action => "newmerchant" )%>
 <table style="width: 500px; border-collapse: collapse;">
 	<% for review in @reviews -%>
 	<% row_color = cycle("CCCCCC", "FFFFFF") %>
