@@ -10,7 +10,7 @@
 </h3>
 <br />
 
-<p><%= link_to('|Write a Review|', :controller => 'reviews', :action => 'public', :id => @merchant.id ) %></p>
+<p style="font-size:1.5em; font-weight:bold"> <br /> <%= link_to('|Write a Review|', :controller => 'reviews', :action => 'public', :id => @merchant.id ) %></p>
 
 <!-- merchant id saved into sessions because ima dumbass  --> 
 <% session[:merchant_id] = @merchant.id %>
