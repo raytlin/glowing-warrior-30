@@ -94,13 +94,11 @@ class MerchantsController < ApplicationController
   end
   
   def public 
-  	
+  	@reviews = Review.find(:all, :order => 'position DESC')
   	@merchant = Merchant.find(params[:id])
-  	
-  	
-  	
-  	
   	render :layout => "public"
   end
- 
+  
+  
+  
 end

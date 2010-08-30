@@ -6,6 +6,7 @@
     <th>Score</th>
     <th>User</th>
     <th>Merchant</th>
+    <th>position</th>
   </tr>
 
 <% for review in @reviews %>
@@ -14,6 +15,7 @@
     <td><%=h review.score %></td>
     <td><%=h review.user.email if review.user %></td>
     <td><%=h review.merchant.name if review.merchant %></td>
+    <td><%=h review.position %></td>
     <td><%= link_to 'Show', review %></td>
     <td><%= link_to 'Edit', edit_review_path(review) %></td>
     <td><%= link_to 'Destroy', review, :confirm => 'Are you sure?', :method => :delete %></td>

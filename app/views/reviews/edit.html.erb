@@ -22,7 +22,10 @@
     <b>Merchant</b><br />
     <%= f.select(:merchant_id, [['Choose One', '']] + @merchants.collect {|mer| [mer.name, mer.id] } ) %>
   </p>
-
+ <p>
+    <b>position</b><br />
+    <%= f.text_field(:position) %>
+  </p>
   <p>
     <%= f.submit "Update" %>
   </p>

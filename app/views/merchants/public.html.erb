@@ -17,8 +17,15 @@
 
 <p>All reviews for <%= @merchant.name %>:
 <table style="width: 500px; border-collapse: collapse;">
-	<% for review in @merchant.reviews -%>
+<% merchant_id = params[:id].to_i %>	
+
+<% for review in @reviews -%>
+	
+	<% if merchant_id == review.merchant_id then %>
+	
+
 	<% row_color = cycle("CCCCCC", "FFFFFF") %>
+	
 	<tr style="background: #<%= row_color %>;" >
 		
 		<td><b><%= link_to(review.user.first_name + " " + truncate(review.user.last_name, 2, "."), :controller => "users", :action => "public", :id => review.user.id) %></b><br /> <%= image_tag(review.user.image_path, :size => '90x100')%> </td>
@@ -42,7 +49,13 @@
 			<p style="font-size: .8em; text-align:right" ><i> Written on <%= review.created_at.strftime("%a %b %d %Y") %>  </i></p>
 			
 		</td>
+		<td>
+			<p> <%= link_to('∧', :controller => 'public', :action => 'rank_up', :id => review.id )%><br /><%= link_to('Rank up!', :controller => 'public', :action => 'rank_up', :id => review.id )%></p> <br />
+			<p><%= link_to('Rank down!', :controller => 'public', :action => 'rank_down', :id => review.id )%><br /><%= link_to('∨', :controller => 'public', :action => 'rank_down', :id => review.id )%></p>
+		</td>
 	</tr>
+	
+	<% end -%>
 	<% end -%>
 </table>
 </p>

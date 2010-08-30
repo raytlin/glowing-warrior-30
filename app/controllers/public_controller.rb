@@ -93,4 +93,28 @@ class PublicController < ApplicationController
   		redirect_to(:action => 'newmerchant')
   	end
    end	
+   
+   def rank_up 
+  	@review = Review.find(params[:id])
+  	@review.position = @review.position + 1 
+  	if @review.update_attributes(params[:review])
+        flash[:notice] = 'Review was successfully updated.'
+  	redirect_to(:controller => 'merchants', :action => 'public', :id => @review.merchant_id )
+  	else 
+  		flash[:notice] = "rank thing is broken"
+  		redirect_to(:controller => 'merchants', :action => 'public', :id => @review.merchant_id )
+  		end
+  end
+ 
+  def rank_down 
+  	@review = Review.find(params[:id])
+  	@review.position = @review.position - 1 
+  	if @review.update_attributes(params[:review])
+        flash[:notice] = 'Review was successfully updated.'
+  	redirect_to(:controller => 'merchants', :action => 'public', :id => @review.merchant_id )
+  	else 
+  		flash[:notice] = "rank thing is broken"
+  		redirect_to(:controller => 'merchants', :action => 'public', :id => @review.merchant_id )
+  		end
+  end
 end

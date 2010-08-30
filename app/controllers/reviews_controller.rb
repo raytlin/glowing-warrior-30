@@ -51,6 +51,7 @@ class ReviewsController < ApplicationController
   # POST /reviews.xml
   def create
     @review = Review.new(params[:review])
+    @review.position = 0
 
     respond_to do |format|
       if @review.save
@@ -113,6 +114,7 @@ class ReviewsController < ApplicationController
   	
   	@review = Review.new(params[:review])
   	@review.user_id = session[:user_id]
+  	@review.position = 0
   	@reviews = Review.find(:all)
   	user_id = @review.user_id
   	merchant_id = @review.merchant_id

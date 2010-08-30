@@ -2863,3 +2863,1810 @@ Processing PublicController#newmerchant (for 127.0.0.1 at 2010-08-28 22:10:35) [
 Rendering template within layouts/public
 Rendering public/newmerchant
 Completed in 21ms (View: 7, DB: 5) | 200 OK [http://localhost/public/newmerchant]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-08-30 01:54:52) [GET]
+  [4;36;1mReview Load (15.6ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY created_at DESC[0m
+Rendering template within layouts/public
+Rendering public/list
+  [4;35;1mReview Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mUser Columns (19.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47public47list46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/public/list.html.erb:15)
+  [4;36;1mMerchant Columns (11.7ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 7379ms (View: 7285, DB: 56) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#public (for 127.0.0.1 at 2010-08-30 01:55:03) [GET]
+  Parameters: {"id"=>"1"}
+
+SyntaxError (F:/Program Files/BitNami RubyStack/apps/review_site2/app/controllers/merchants_controller.rb:98: syntax error, unexpected ')'):
+  
+
+Rendered rescues/_trace (92.8ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#public (for 127.0.0.1 at 2010-08-30 01:56:41) [GET]
+  Parameters: {"id"=>"1"}
+
+SyntaxError (F:/Program Files/BitNami RubyStack/apps/review_site2/app/controllers/merchants_controller.rb:98: syntax error, unexpected ')'):
+  
+
+Rendered rescues/_trace (40.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 01:57:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mMysql::Error: Unknown column 'position' in 'order clause': SELECT * FROM `reviews` ORDER BY position DESC[0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Unknown column 'position' in 'order clause': SELECT * FROM `reviews`  ORDER BY position DESC):
+  app/controllers/merchants_controller.rb:97:in `public'
+
+Rendered rescues/_trace (46.9ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (11.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100828035345)
+Migrating to CreateAdminUsers (20100828035502)
+Migrating to CreateMerchants (20100828035613)
+Migrating to CreateReviews (20100828035717)
+Migrating to AddPositionToReviews (20100830081044)
+  [4;36;1mSQL (63.5ms)[0m   [0;1mALTER TABLE `reviews` ADD `position` int(11) NOT NULL[0m
+  [4;35;1mSQL (14.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100830081044')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (18.6ms)[0m   [0mSHOW FIELDS FROM `admin_users`[0m
+  [4;36;1mSQL (5.9ms)[0m   [0;1mdescribe `admin_users`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW KEYS FROM `admin_users`[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mSQL (5.9ms)[0m   [0mdescribe `merchants`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW KEYS FROM `merchants`[0m
+  [4;35;1mSQL (3.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mSQL (4.9ms)[0m   [0;1mdescribe `reviews`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW KEYS FROM `reviews`[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 01:58:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;35;1mMerchant Columns (6.8ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (6.8ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (14.6ms)
+Completed in 111ms (View: 39, DB: 15) | 200 OK [http://localhost/merchants/public/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:00:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;36;1mMerchant Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;35;1mReview Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (8.8ms)
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:26)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 71ms (View: 38, DB: 18) | 200 OK [http://localhost/merchants/public/1]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:01:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;36;1mMerchant Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;35;1mReview Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (7.8ms)
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:28)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 57ms (View: 25, DB: 19) | 200 OK [http://localhost/merchants/public/1]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:02:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;36;1mMerchant Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;35;1mReview Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (7.8ms)
+Completed in 40ms (View: 16, DB: 13) | 200 OK [http://localhost/merchants/public/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:03:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (4.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (8.8ms)
+  [4;35;1mUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:28)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 58ms (View: 28, DB: 16) | 200 OK [http://localhost/merchants/public/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:05:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Load (2.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (7.8ms)
+Completed in 43ms (View: 18, DB: 12) | 200 OK [http://localhost/merchants/public/1]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:05:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;36;1mMerchant Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;35;1mReview Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (7.8ms)
+Completed in 100ms (View: 73, DB: 11) | 200 OK [http://localhost/merchants/public/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:08:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (7.8ms)
+Completed in 40ms (View: 17, DB: 10) | 200 OK [http://localhost/merchants/public/1]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:09:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;36;1mMerchant Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;35;1mReview Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (9.8ms)
+Completed in 42ms (View: 16, DB: 11) | 200 OK [http://localhost/merchants/public/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:09:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.9ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (7.8ms)
+Completed in 44ms (View: 17, DB: 11) | 200 OK [http://localhost/merchants/public/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:11:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;36;1mMerchant Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;35;1mReview Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (6.8ms)
+Completed in 45ms (View: 20, DB: 10) | 200 OK [http://localhost/merchants/public/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:12:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (7.8ms)
+  [4;35;1mUser Columns (5.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 111ms (View: 26, DB: 20) | 200 OK [http://localhost/merchants/public/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:13:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.9ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (7.8ms)
+  [4;35;1mUser Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 61ms (View: 28, DB: 17) | 200 OK [http://localhost/merchants/public/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:14:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;35;1mMerchant Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (1.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (7.8ms)
+  [4;35;1mUser Columns (6.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 60ms (View: 26, DB: 20) | 200 OK [http://localhost/merchants/public/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:15:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (7.8ms)
+  [4;35;1mUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 62ms (View: 27, DB: 18) | 200 OK [http://localhost/merchants/public/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#rank_up (for 127.0.0.1 at 2010-08-30 02:15:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMerchant Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+
+NoMethodError (undefined method `review' for #<Merchant:0x64479d8>):
+  app/controllers/public_controller.rb:99:in `rank_up'
+
+Rendered rescues/_trace (98.6ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:20:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.9ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (7.8ms)
+  [4;35;1mUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 52ms (View: 21, DB: 19) | 200 OK [http://localhost/merchants/public/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#rank_up (for 127.0.0.1 at 2010-08-30 02:20:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (2.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 1) [0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+):
+  app/controllers/public_controller.rb:99:in `rank_up'
+
+Rendered rescues/_trace (39.1ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#rank_up (for 127.0.0.1 at 2010-08-30 02:24:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (2.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 1) [0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 19ms (DB: 6) | 302 Found [http://localhost/public/rank_up/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:24:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;35;1mMerchant Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (1.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (7.8ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (11.7ms)
+  [4;35;1mUser Columns (6.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 59ms (View: 21, DB: 23) | 200 OK [http://localhost/merchants/public/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#rank_down (for 127.0.0.1 at 2010-08-30 02:24:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Columns (4.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (2.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 1) [0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 17ms (DB: 7) | 302 Found [http://localhost/public/rank_down/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:24:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;35;1mMerchant Columns (6.8ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (1.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (4.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (8.8ms)
+  [4;35;1mUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 55ms (View: 21, DB: 20) | 200 OK [http://localhost/merchants/public/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#public (for 127.0.0.1 at 2010-08-30 02:24:27) [GET]
+  Parameters: {"id"=>"1"}
+Redirected to http://localhost:3000/public/login
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/reviews/public/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#login (for 127.0.0.1 at 2010-08-30 02:24:28) [GET]
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/public
+Rendering public/login
+Completed in 8078ms (View: 8066, DB: 4) | 200 OK [http://localhost/public/login]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#send_login (for 127.0.0.1 at 2010-08-30 02:24:47) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"OD7lngvjcdUhA1hE8AZG/yAF2t3U0lpQ/MQHrtRzH2E=", "user"=>{"password"=>"lin", "email"=>"raytlin@gmail.com"}}
+  [4;35;1mUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (email = 'raytlin@gmail.com' AND password = 'lin') LIMIT 1[0m
+Redirected to http://localhost:3000/reviews/public/1
+Completed in 16ms (DB: 6) | 302 Found [http://localhost/public/send_login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#public (for 127.0.0.1 at 2010-08-30 02:24:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Columns (6.8ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mMerchant Columns (10.7ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;36;1mMerchant Load (0.0ms)[0m   [0;1mSELECT * FROM `merchants` [0m
+  [4;35;1mUser Columns (11.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering reviews/public
+Completed in 75ms (View: 16, DB: 30) | 200 OK [http://localhost/reviews/public/1]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-08-30 02:25:10) [GET]
+  [4;35;1mAdminUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `admin_users`[0m
+Rendering template within layouts/admin
+Rendering admin/index
+Completed in 48ms (View: 35, DB: 6) | 200 OK [http://localhost/admin]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AdminController#send_login (for 127.0.0.1 at 2010-08-30 02:25:13) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"OD7lngvjcdUhA1hE8AZG/yAF2t3U0lpQ/MQHrtRzH2E=", "admin_user"=>{"name"=>"ray", "password"=>"lin"}}
+  [4;36;1mAdminUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `admin_users`[0m
+  [4;35;1mAdminUser Load (1.0ms)[0m   [0mSELECT * FROM `admin_users` WHERE (name = 'ray' AND password = 'lin') LIMIT 1[0m
+Redirected to http://localhost:3000/admin/menu
+Completed in 15ms (DB: 5) | 302 Found [http://localhost/admin/send_login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AdminController#menu (for 127.0.0.1 at 2010-08-30 02:25:14) [GET]
+Rendering template within layouts/admin
+Rendering admin/menu
+Completed in 14ms (View: 12, DB: 0) | 200 OK [http://localhost/admin/menu]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#index (for 127.0.0.1 at 2010-08-30 02:25:20) [GET]
+  [4;36;1mMerchant Load (2.0ms)[0m   [0;1mSELECT * FROM `merchants` [0m
+Rendering template within layouts/admin
+Rendering merchants/index
+  [4;35;1mMerchant Columns (7.8ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;35;1mReview Columns (6.8ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (19.5ms)
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 2) [0m
+Rendered merchants/_score (2.0ms)
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 3) [0m
+Rendered merchants/_score (1.0ms)
+Completed in 76ms (View: 53, DB: 18) | 200 OK [http://localhost/merchants/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-08-30 02:25:24) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` [0m
+Rendering template within layouts/admin
+Rendering users/index
+  [4;35;1mUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Completed in 33ms (View: 19, DB: 5) | 200 OK [http://localhost/users/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#index (for 127.0.0.1 at 2010-08-30 02:25:27) [GET]
+  [4;36;1mMerchant Load (1.0ms)[0m   [0;1mSELECT * FROM `merchants` [0m
+Rendering template within layouts/admin
+Rendering merchants/index
+  [4;35;1mMerchant Columns (7.8ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;35;1mReview Columns (7.8ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (17.6ms)
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 2) [0m
+Rendered merchants/_score (2.0ms)
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 3) [0m
+Rendered merchants/_score (2.0ms)
+Completed in 57ms (View: 28, DB: 21) | 200 OK [http://localhost/merchants/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-08-30 02:25:30) [GET]
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY merchant_id[0m
+Rendering template within layouts/admin
+Rendering reviews/index
+  [4;35;1mReview Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mMerchant Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 151ms (View: 61, DB: 18) | 200 OK [http://localhost/reviews/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#create_public (for 127.0.0.1 at 2010-08-30 02:25:50) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"OD7lngvjcdUhA1hE8AZG/yAF2t3U0lpQ/MQHrtRzH2E=", "review"=>{"comment"=>"sdf", "merchant_id"=>"1", "score"=>"1"}}
+  [4;36;1mReview Columns (4.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` [0m
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (user_id = 1 AND merchant_id = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 18ms (DB: 6) | 302 Found [http://localhost/reviews/create_public]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:25:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;36;1mMerchant Columns (4.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;35;1mReview Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (8.8ms)
+  [4;36;1mUser Columns (4.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 59ms (View: 19, DB: 19) | 200 OK [http://localhost/merchants/public/1]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#logout (for 127.0.0.1 at 2010-08-30 02:25:54) [GET]
+Redirected to http://localhost:3000/
+Completed in 3ms (DB: 2) | 302 Found [http://localhost/public/logout]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-08-30 02:25:55) [GET]
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY created_at DESC[0m
+Rendering template within layouts/public
+Rendering public/list
+  [4;36;1mReview Columns (5.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47public47list46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/public/list.html.erb:15)
+  [4;35;1mMerchant Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 56ms (View: 29, DB: 20) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#signup (for 127.0.0.1 at 2010-08-30 02:25:55) [GET]
+  [4;35;1mUser Columns (7.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/public
+Rendering public/signup
+Completed in 44ms (View: 26, DB: 8) | 200 OK [http://localhost/public/signup]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#send_signup (for 127.0.0.1 at 2010-08-30 02:26:12) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"OD7lngvjcdUhA1hE8AZG/yAF2t3U0lpQ/MQHrtRzH2E=", "user"=>{"last_name"=>"tsao", "password"=>"kevin", "image_path"=>"14.jpg", "first_name"=>"kevin", "email"=>"kevin@kevin.net"}}
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'kevin@kevin.net') LIMIT 1[0m
+  [4;35;1mUser Create (0.0ms)[0m   [0mINSERT INTO `users` (`created_at`, `updated_at`, `last_name`, `password`, `image_path`, `email`, `first_name`) VALUES('2010-08-30 09:26:12', '2010-08-30 09:26:12', 'tsao', 'kevin', '14.jpg', 'kevin@kevin.net', 'kevin')[0m
+  [4;36;1mSQL (31.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 51ms (DB: 36) | 302 Found [http://localhost/public/send_signup]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-08-30 02:26:13) [GET]
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY created_at DESC[0m
+Rendering template within layouts/public
+Rendering public/list
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mUser Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47public47list46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/public/list.html.erb:15)
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.9ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 49ms (View: 23, DB: 19) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:26:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;36;1mMerchant Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.9ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;35;1mReview Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (7.8ms)
+  [4;36;1mUser Columns (5.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 57ms (View: 21, DB: 21) | 200 OK [http://localhost/merchants/public/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#public (for 127.0.0.1 at 2010-08-30 02:26:30) [GET]
+  Parameters: {"id"=>"1"}
+Redirected to http://localhost:3000/public/login
+Completed in 3ms (DB: 0) | 302 Found [http://localhost/reviews/public/1]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#login (for 127.0.0.1 at 2010-08-30 02:26:31) [GET]
+  [4;35;1mUser Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/public
+Rendering public/login
+Completed in 19ms (View: 6, DB: 6) | 200 OK [http://localhost/public/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#send_login (for 127.0.0.1 at 2010-08-30 02:27:14) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"OD7lngvjcdUhA1hE8AZG/yAF2t3U0lpQ/MQHrtRzH2E=", "user"=>{"password"=>"kevin", "email"=>"kevin@kevin.net"}}
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (email = 'kevin@kevin.net' AND password = 'kevin') LIMIT 1[0m
+Redirected to http://localhost:3000/reviews/public/1
+Completed in 18ms (DB: 6) | 302 Found [http://localhost/public/send_login]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#public (for 127.0.0.1 at 2010-08-30 02:27:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.9ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;35;1mMerchant Load (1.0ms)[0m   [0mSELECT * FROM `merchants` [0m
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendering template within layouts/public
+Rendering reviews/public
+Completed in 47ms (View: 6, DB: 19) | 200 OK [http://localhost/reviews/public/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#create_public (for 127.0.0.1 at 2010-08-30 02:27:25) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"OD7lngvjcdUhA1hE8AZG/yAF2t3U0lpQ/MQHrtRzH2E=", "review"=>{"comment"=>"testing!", "merchant_id"=>"1", "score"=>"3"}}
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` [0m
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (user_id = 2 AND merchant_id = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mReview Create (0.0ms)[0m   [0;1mMysql::Error: Column 'position' cannot be null: INSERT INTO `reviews` (`comment`, `position`, `created_at`, `updated_at`, `user_id`, `score`, `merchant_id`) VALUES('testing!', NULL, '2010-08-30 09:27:25', '2010-08-30 09:27:25', 2, 3, 1)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Column 'position' cannot be null: INSERT INTO `reviews` (`comment`, `position`, `created_at`, `updated_at`, `user_id`, `score`, `merchant_id`) VALUES('testing!', NULL, '2010-08-30 09:27:25', '2010-08-30 09:27:25', 2, 3, 1)):
+  app/controllers/reviews_controller.rb:124:in `create_public'
+
+Rendered rescues/_trace (115.2ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#create_public (for 127.0.0.1 at 2010-08-30 02:29:09) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"OD7lngvjcdUhA1hE8AZG/yAF2t3U0lpQ/MQHrtRzH2E=", "review"=>{"comment"=>"testing!", "merchant_id"=>"1", "score"=>"3"}}
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` [0m
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (user_id = 2 AND merchant_id = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mReview Create (0.0ms)[0m   [0;1mINSERT INTO `reviews` (`comment`, `position`, `created_at`, `updated_at`, `user_id`, `score`, `merchant_id`) VALUES('testing!', 0, '2010-08-30 09:29:09', '2010-08-30 09:29:09', 2, 3, 1)[0m
+  [4;35;1mSQL (28.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 47ms (DB: 33) | 302 Found [http://localhost/reviews/create_public]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:29:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (8.8ms)
+  [4;35;1mUser Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 57ms (View: 24, DB: 19) | 200 OK [http://localhost/merchants/public/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#rank_up (for 127.0.0.1 at 2010-08-30 02:29:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (2.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 1) [0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 17ms (DB: 6) | 302 Found [http://localhost/public/rank_up/1]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:29:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (7.8ms)
+  [4;35;1mUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+
+ActionView::TemplateError (undefined local variable or method `review_id' for #<ActionView::Base:0x645d8c0>) on line #53 of app/views/merchants/public.html.erb:
+50: 			
+51: 		</td>
+52: 		<td>
+53: 			<p> <%= link_to('∧', :controller => 'public', :action => 'rank_up', :id => review_id )%><br /><%= link_to('Rank up!', :controller => 'public', :action => 'rank_up', :id => review_id )%></p> <br />
+54: 			<p><%= link_to('Rank down!', :controller => 'public', :action => 'rank_down', :id => review_id )%><br /><%= link_to('∨', :controller => 'public', :action => 'rank_down', :id => review_id )%></p>
+55: 		</td>
+56: 	</tr>
+
+    app/views/merchants/public.html.erb:53
+    app/views/merchants/public.html.erb:22:in `each'
+    app/views/merchants/public.html.erb:22
+    app/controllers/merchants_controller.rb:99:in `public'
+
+Rendered rescues/_trace (51.8ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:30:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.9ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (7.8ms)
+  [4;35;1mUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 64ms (View: 33, DB: 18) | 200 OK [http://localhost/merchants/public/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#rank_up (for 127.0.0.1 at 2010-08-30 02:30:29) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (2.9ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 2) [0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 17ms (DB: 7) | 302 Found [http://localhost/public/rank_up/2]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:30:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;35;1mMerchant Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.9ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (4.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (9.8ms)
+  [4;35;1mUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 60ms (View: 27, DB: 20) | 200 OK [http://localhost/merchants/public/1]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#rank_up (for 127.0.0.1 at 2010-08-30 02:30:31) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (2.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 2) [0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 17ms (DB: 7) | 302 Found [http://localhost/public/rank_up/2]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:30:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (7.8ms)
+  [4;35;1mUser Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 58ms (View: 25, DB: 17) | 200 OK [http://localhost/merchants/public/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:32:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (7.8ms)
+  [4;35;1mUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 55ms (View: 24, DB: 16) | 200 OK [http://localhost/merchants/public/1]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#rank_up (for 127.0.0.1 at 2010-08-30 02:32:27) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (2.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 2) [0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 16ms (DB: 7) | 302 Found [http://localhost/public/rank_up/2]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:32:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;35;1mMerchant Columns (6.8ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (1.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (5.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (9.8ms)
+  [4;35;1mUser Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 59ms (View: 24, DB: 21) | 200 OK [http://localhost/merchants/public/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#rank_up (for 127.0.0.1 at 2010-08-30 02:32:30) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mReview Columns (4.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (2.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 2) [0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 16ms (DB: 8) | 302 Found [http://localhost/public/rank_up/2]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:32:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (8.8ms)
+  [4;35;1mUser Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 112ms (View: 22, DB: 20) | 200 OK [http://localhost/merchants/public/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#rank_up (for 127.0.0.1 at 2010-08-30 02:32:34) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mReview Columns (4.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (2.9ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 2) [0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 19ms (DB: 8) | 302 Found [http://localhost/public/rank_up/2]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:32:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;35;1mMerchant Columns (10.7ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (7.8ms)
+  [4;35;1mUser Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 64ms (View: 23, DB: 23) | 200 OK [http://localhost/merchants/public/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AdminController#menu (for 127.0.0.1 at 2010-08-30 02:32:37) [GET]
+Rendering template within layouts/admin
+Rendering admin/menu
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/admin/menu]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-08-30 02:32:39) [GET]
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY merchant_id[0m
+Rendering template within layouts/admin
+Rendering reviews/index
+  [4;35;1mReview Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mMerchant Columns (5.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (1.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 53ms (View: 26, DB: 19) | 200 OK [http://localhost/reviews/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#rank_up (for 127.0.0.1 at 2010-08-30 02:33:47) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (2.9ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 2) [0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 16ms (DB: 8) | 302 Found [http://localhost/public/rank_up/2]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:33:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;35;1mMerchant Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (7.8ms)
+  [4;35;1mUser Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 55ms (View: 22, DB: 21) | 200 OK [http://localhost/merchants/public/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#rank_down (for 127.0.0.1 at 2010-08-30 02:33:49) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (2.9ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 2) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mReview Update (0.0ms)[0m   [0mUPDATE `reviews` SET `updated_at` = '2010-08-30 09:33:49', `position` = -1 WHERE `id` = 2[0m
+  [4;36;1mSQL (31.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 51ms (DB: 38) | 302 Found [http://localhost/public/rank_down/2]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:33:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;36;1mMerchant Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;35;1mReview Columns (5.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (9.8ms)
+  [4;36;1mUser Columns (4.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 59ms (View: 24, DB: 19) | 200 OK [http://localhost/merchants/public/1]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#rank_up (for 127.0.0.1 at 2010-08-30 02:33:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mReview Load (2.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 1) [0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 16ms (DB: 9) | 302 Found [http://localhost/public/rank_up/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:33:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;36;1mMerchant Columns (5.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.9ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;35;1mReview Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (6.8ms)
+  [4;36;1mUser Columns (6.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 61ms (View: 25, DB: 22) | 200 OK [http://localhost/merchants/public/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#rank_up (for 127.0.0.1 at 2010-08-30 02:33:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 1) [0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 17ms (DB: 4) | 302 Found [http://localhost/public/rank_up/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:33:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;36;1mMerchant Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (3.9ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;35;1mReview Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (7.8ms)
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 57ms (View: 23, DB: 21) | 200 OK [http://localhost/merchants/public/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#rank_up (for 127.0.0.1 at 2010-08-30 02:33:58) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mReview Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mReview Load (2.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 2) [0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 16ms (DB: 6) | 302 Found [http://localhost/public/rank_up/2]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:33:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;36;1mMerchant Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;35;1mReview Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (7.8ms)
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 54ms (View: 23, DB: 16) | 200 OK [http://localhost/merchants/public/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#rank_up (for 127.0.0.1 at 2010-08-30 02:36:00) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mReview Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mReview Load (2.9ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 2) [0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 19ms (DB: 7) | 302 Found [http://localhost/public/rank_up/2]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:36:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;36;1mMerchant Columns (4.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;35;1mReview Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (7.8ms)
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 56ms (View: 23, DB: 21) | 200 OK [http://localhost/merchants/public/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#rank_up (for 127.0.0.1 at 2010-08-30 02:36:03) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mReview Columns (6.8ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mReview Load (2.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 2) [0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 19ms (DB: 9) | 302 Found [http://localhost/public/rank_up/2]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:36:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;36;1mMerchant Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.9ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;35;1mReview Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (7.8ms)
+  [4;36;1mUser Columns (4.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 55ms (View: 24, DB: 19) | 200 OK [http://localhost/merchants/public/1]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#rank_up (for 127.0.0.1 at 2010-08-30 02:36:24) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mReview Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mReview Load (2.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 2) [0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 20ms (DB: 7) | 302 Found [http://localhost/public/rank_up/2]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:36:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;36;1mMerchant Columns (6.8ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (1.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;35;1mReview Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (8.8ms)
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 116ms (View: 83, DB: 21) | 200 OK [http://localhost/merchants/public/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#rank_up (for 127.0.0.1 at 2010-08-30 02:37:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mReview Load (2.9ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 1) [0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 17ms (DB: 7) | 302 Found [http://localhost/public/rank_up/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:37:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;36;1mMerchant Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.9ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;35;1mReview Columns (5.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (10.7ms)
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;35;1mUser Load (2.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 69ms (View: 27, DB: 23) | 200 OK [http://localhost/merchants/public/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#rank_up (for 127.0.0.1 at 2010-08-30 02:37:32) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mReview Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mReview Load (2.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 2) [0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 16ms (DB: 6) | 302 Found [http://localhost/public/rank_up/2]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:37:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;36;1mMerchant Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.9ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;35;1mReview Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (7.8ms)
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 60ms (View: 24, DB: 19) | 200 OK [http://localhost/merchants/public/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#rank_up (for 127.0.0.1 at 2010-08-30 02:39:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Columns (8.8ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 1) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mReview Update (0.0ms)[0m   [0;1mUPDATE `reviews` SET `updated_at` = '2010-08-30 09:39:10', `position` = 1 WHERE `id` = 1[0m
+  [4;35;1mSQL (79.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 103ms (DB: 89) | 302 Found [http://localhost/public/rank_up/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:39:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.9ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;35;1mReview Load (2.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (4.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (10.7ms)
+  [4;35;1mUser Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 60ms (View: 24, DB: 21) | 200 OK [http://localhost/merchants/public/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#rank_up (for 127.0.0.1 at 2010-08-30 02:39:11) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (2.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 2) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mReview Update (0.0ms)[0m   [0mUPDATE `reviews` SET `updated_at` = '2010-08-30 09:39:11', `position` = 0 WHERE `id` = 2[0m
+  [4;36;1mSQL (28.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 105ms (DB: 35) | 302 Found [http://localhost/public/rank_up/2]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:39:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;36;1mMerchant Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;35;1mReview Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (8.8ms)
+  [4;36;1mUser Columns (4.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 58ms (View: 25, DB: 19) | 200 OK [http://localhost/merchants/public/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#rank_up (for 127.0.0.1 at 2010-08-30 02:39:13) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mReview Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mReview Load (2.9ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 2) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mReview Update (0.0ms)[0m   [0;1mUPDATE `reviews` SET `updated_at` = '2010-08-30 09:39:13', `position` = 1 WHERE `id` = 2[0m
+  [4;35;1mSQL (32.2ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 51ms (DB: 40) | 302 Found [http://localhost/public/rank_up/2]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:39:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.9ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (9.8ms)
+  [4;35;1mUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 58ms (View: 25, DB: 19) | 200 OK [http://localhost/merchants/public/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#rank_up (for 127.0.0.1 at 2010-08-30 02:39:15) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mReview Columns (4.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (2.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 2) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mReview Update (0.0ms)[0m   [0mUPDATE `reviews` SET `updated_at` = '2010-08-30 09:39:15', `position` = 2 WHERE `id` = 2[0m
+  [4;36;1mSQL (27.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 48ms (DB: 34) | 302 Found [http://localhost/public/rank_up/2]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:39:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;36;1mMerchant Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;35;1mReview Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (8.8ms)
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 57ms (View: 22, DB: 20) | 200 OK [http://localhost/merchants/public/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#rank_down (for 127.0.0.1 at 2010-08-30 02:39:19) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mReview Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mReview Load (2.9ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 2) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mReview Update (0.0ms)[0m   [0;1mUPDATE `reviews` SET `updated_at` = '2010-08-30 09:39:19', `position` = 1 WHERE `id` = 2[0m
+  [4;35;1mSQL (31.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 52ms (DB: 39) | 302 Found [http://localhost/public/rank_down/2]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:39:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (7.8ms)
+  [4;35;1mUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 56ms (View: 25, DB: 18) | 200 OK [http://localhost/merchants/public/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#rank_up (for 127.0.0.1 at 2010-08-30 02:39:22) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (2.9ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 2) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mReview Update (0.0ms)[0m   [0mUPDATE `reviews` SET `updated_at` = '2010-08-30 09:39:22', `position` = 2 WHERE `id` = 2[0m
+  [4;36;1mSQL (32.2ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 52ms (DB: 39) | 302 Found [http://localhost/public/rank_up/2]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:39:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;36;1mMerchant Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;35;1mReview Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (7.8ms)
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 55ms (View: 23, DB: 18) | 200 OK [http://localhost/merchants/public/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-08-30 02:39:30) [GET]
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY created_at DESC[0m
+Rendering template within layouts/public
+Rendering public/list
+  [4;36;1mReview Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47public47list46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/public/list.html.erb:15)
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47public47list46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/public/list.html.erb:15)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 51ms (View: 26, DB: 17) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:39:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;36;1mMerchant Columns (5.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;36;1mReview Load (1.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;35;1mReview Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (8.8ms)
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 57ms (View: 21, DB: 21) | 200 OK [http://localhost/merchants/public/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-08-30 02:42:21) [GET]
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY merchant_id[0m
+Rendering template within layouts/admin
+Rendering reviews/index
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.9ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 111ms (View: 85, DB: 19) | 200 OK [http://localhost/reviews/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-08-30 02:42:25) [GET]
+  [4;35;1mReview Load (2.9ms)[0m   [0mSELECT * FROM `reviews` ORDER BY merchant_id[0m
+Rendering template within layouts/admin
+Rendering reviews/index
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mUser Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 55ms (View: 28, DB: 20) | 200 OK [http://localhost/reviews/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#edit (for 127.0.0.1 at 2010-08-30 02:42:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mReview Load (2.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 1) [0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` [0m
+  [4;36;1mMerchant Load (1.0ms)[0m   [0;1mSELECT * FROM `merchants` [0m
+Rendering template within layouts/admin
+Rendering reviews/edit
+  [4;35;1mUser Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mMerchant Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+Completed in 52ms (View: 19, DB: 18) | 200 OK [http://localhost/reviews/1/edit]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-08-30 02:42:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Columns (5.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mReview Load (2.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 1) [0m
+Rendering template within layouts/admin
+Rendering reviews/show
+  [4;35;1mUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 56ms (View: 26, DB: 21) | 200 OK [http://localhost/reviews/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-08-30 02:42:44) [GET]
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY merchant_id[0m
+Rendering template within layouts/admin
+Rendering reviews/index
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+  [4;36;1mMerchant Load (2.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 53ms (View: 28, DB: 17) | 200 OK [http://localhost/reviews]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-08-30 02:42:46) [GET]
+  [4;35;1mReview Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` [0m
+  [4;35;1mMerchant Load (1.0ms)[0m   [0mSELECT * FROM `merchants` [0m
+Rendering template within layouts/admin
+Rendering reviews/new
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mMerchant Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `merchants`[0m
+Completed in 54ms (View: 22, DB: 15) | 200 OK [http://localhost/reviews/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#create (for 127.0.0.1 at 2010-08-30 02:42:57) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"OD7lngvjcdUhA1hE8AZG/yAF2t3U0lpQ/MQHrtRzH2E=", "review"=>{"comment"=>"adsfg", "user_id"=>"1", "merchant_id"=>"2", "score"=>"3"}}
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mReview Create (0.0ms)[0m   [0;1mINSERT INTO `reviews` (`comment`, `position`, `created_at`, `updated_at`, `user_id`, `score`, `merchant_id`) VALUES('adsfg', 0, '2010-08-30 09:42:57', '2010-08-30 09:42:57', 1, 3, 2)[0m
+  [4;35;1mSQL (31.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/reviews/3
+Completed in 50ms (DB: 35) | 302 Found [http://localhost/reviews]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-08-30 02:42:58) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mReview Columns (4.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (2.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 3) [0m
+Rendering template within layouts/admin
+Rendering reviews/show
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mMerchant Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 2) [0m
+Completed in 48ms (View: 21, DB: 19) | 200 OK [http://localhost/reviews/3]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-08-30 02:45:53) [GET]
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` ORDER BY merchant_id[0m
+Rendering template within layouts/admin
+Rendering reviews/index
+  [4;35;1mReview Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mMerchant Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mMerchant Load (0.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 2) [0m
+Completed in 63ms (View: 37, DB: 17) | 200 OK [http://localhost/reviews]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#rank_up (for 127.0.0.1 at 2010-08-30 02:46:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReview Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 1) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mReview Update (1.0ms)[0m   [0mUPDATE `reviews` SET `updated_at` = '2010-08-30 09:46:06', `position` = 2 WHERE `id` = 1[0m
+  [4;36;1mSQL (31.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/merchants/public/1
+Completed in 53ms (DB: 37) | 302 Found [http://localhost/public/rank_up/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MerchantsController#public (for 127.0.0.1 at 2010-08-30 02:46:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` ORDER BY position DESC[0m
+  [4;36;1mMerchant Columns (4.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mMerchant Load (2.0ms)[0m   [0mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Rendering template within layouts/public
+Rendering merchants/public
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;35;1mReview Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendered merchants/_score (12.7ms)
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47merchants47public46html46erb at F:/Program Files/BitNami RubyStack/apps/review_site2/app/views/merchants/public.html.erb:31)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `merchants` WHERE (`merchants`.`id` = 1) [0m
+Completed in 59ms (View: 27, DB: 20) | 200 OK [http://localhost/merchants/public/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PublicController#allmerchants (for 127.0.0.1 at 2010-08-30 02:46:13) [GET]
+  [4;35;1mMerchant Load (34.2ms)[0m   [0mSELECT * FROM `merchants` ORDER BY name ASC[0m
+Rendering template within layouts/public
+Rendering public/allmerchants
+  [4;36;1mMerchant Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `merchants`[0m
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 1) [0m
+  [4;36;1mReview Columns (5.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (1.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 2) [0m
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` WHERE (`reviews`.merchant_id = 3) [0m
+Completed in 161ms (View: 107, DB: 45) | 200 OK [http://localhost/public/allmerchants]
