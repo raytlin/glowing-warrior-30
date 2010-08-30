@@ -1,6 +1,6 @@
 class AddPositionToReviews < ActiveRecord::Migration
   def self.up
-    add_column :reviews, :position, :integer, :null => false
+    add_column :reviews, :position, :integer
   end
 
   def self.down
