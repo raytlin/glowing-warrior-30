@@ -98,7 +98,7 @@ class PublicController < ApplicationController
   	@review = Review.find(params[:id])
   	@review.position = @review.position + 1 
   	if @review.update_attributes(params[:review])
-        flash[:notice] = 'Review was successfully updated.'
+        flash[:notice] = 'Review was ranked up!.'
   	redirect_to(:controller => 'merchants', :action => 'public', :id => @review.merchant_id )
   	else 
   		flash[:notice] = "rank thing is broken"
@@ -110,7 +110,7 @@ class PublicController < ApplicationController
   	@review = Review.find(params[:id])
   	@review.position = @review.position - 1 
   	if @review.update_attributes(params[:review])
-        flash[:notice] = 'Review was successfully updated.'
+        flash[:notice] = 'Review was ranked down!'
   	redirect_to(:controller => 'merchants', :action => 'public', :id => @review.merchant_id )
   	else 
   		flash[:notice] = "rank thing is broken"
